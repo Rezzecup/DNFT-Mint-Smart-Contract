@@ -17,10 +17,8 @@ A CosmWasm smart contract implementation for creating and managing derivative NF
 - [Deployment](#deployment)
 - [Usage Examples](#usage-examples)
 - [Smart Contract Interface](#smart-contract-interface)
-- [Testing](#testing)
 - [Contributing](#contributing)
 - [Contact](#contact)
-- [License](#license)
 
 ## 🌟 Overview
 
@@ -329,22 +327,6 @@ terrad tx wasm execute $CONTRACT_ADDRESS "$TRANSFER_MSG" \
 | `Tokens` | List tokens owned by address | `TokensResponse` |
 | `AllTokens` | List all tokens (paginated) | `TokensResponse` |
 | `Minter` | Get authorized minter address | `MinterResponse` |
-
-## 🧪 Testing
-
-```bash
-# Run unit tests
-cargo test
-
-# Run tests with output
-cargo test -- --nocapture
-
-# Run specific test
-cargo test test_mint_derivative
-
-# Check code coverage
-cargo tarpaulin --out Html
-```
 
 ## 🤝 Contributing
 

@@ -28,20 +28,6 @@ fn mock_dependencies_with_coins() -> OwnedDeps<MockStorage, MockApi, MockQuerier
 
 }
 
-fn setup_contract(deps: DepsMut<'_>) -> Cw721Contract<'static, Extension, Empty> {
-    let contract: Cw721Contract::<Extension, Empty> = Cw721Contract::default();
-    let msg = InstantiateMsg {
-        name: CONTRACT_NAME.to_string(),
-        symbol: SYMBOL.to_string(),
-        minter: String::from(MINTER),
-    };
-    let info = mock_info("creator", &[]);
-    let res = contract.instantiate(deps, mock_env(), info, msg).unwrap();
-    assert_eq!(0, res.messages.len());
-    contract
-}
-
-#[test]
 fn proper_instantiation() {
     
     let mut deps = mock_dependencies_with_coins();
